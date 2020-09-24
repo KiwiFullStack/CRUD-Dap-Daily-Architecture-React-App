@@ -21,7 +21,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-   
         <Router>
           <div>
             <Route exact path='/' component={LandingComp} />
@@ -32,7 +31,6 @@ class App extends React.Component {
             <Route path='/newsfeed' component={FeedsComp} />
           </div>
         </Router>
-
       </div>
     )
   }
