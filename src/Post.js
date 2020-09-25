@@ -70,18 +70,6 @@ class Post extends Component {
             </form>
           </div>
         </div>
-        <div className="footer">
-          <div className="footer-gradient" />
-          <div className="tab1">
-            <i className="fas fa-building" />
-          </div>
-          <Link to="/create" className="tab2">
-            <i className="fas fa-plus" />
-          </Link>
-          <div className="tab3">
-            <i className="fas fa-star" />
-          </div>
-        </div>
       </div>
     );
   }

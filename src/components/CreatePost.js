@@ -14,39 +14,38 @@ class EditPostComp extends React.Component {
   }
 
   componentDidMount() {
-    var id  = this.props.match.params.id;
+    var id = this.props.match.params.id;
     ApiHook.getSinglePost(id).then((res) => {
       this.setState({ post: res.data });
     });
   }
 
-
-
-
   handleFormSubmit = (e) => {
-    e.preventDefault()
-
-    var formData = new FormData(this.form)
-
-    ApiHook.uploadFile(formData)
-      .then(res => res.data)
-
-      .then(fileName => {
-        var {currentUser} = this.props;
-        var data = {
-          name: formData.get("title-input"),
-          description: formData.get("location-input"),
-          location: formData.get("description-input"),
-          photo: formData.get("photo-input"),
-        };
-        ApiHook.addPost(data).then(res => this.props.history.push('/newsfeed'));
-      })
-
-    }
-
+    e.preventDefault();
+    var formData = new FormData(this.form);
+    // ApiHook.uploadFile(formData)
+    //   .then(res => res.data)
+    //   .then(fileName => {
+    var { currentUser } = this.props;
+    var data = {
+      name: formData.get("title-input"),
+      description: formData.get("location-input"),
+      location: formData.get("description-input"),
+      photo: formData.get("photo-input"),
+    };
+    ApiHook.addPost(data).then((res) => this.props.history.push("/newsfeed"));
+    // })
+  };
 
   render() {
-    var { id, name, description, location, description, photo } = this.state.post;
+    var {
+      id,
+      name,
+      description,
+      location,
+      description,
+      photo,
+    } = this.state.post;
     return (
       <div className="app">
         <div className="newsfeed-page">
@@ -92,7 +91,12 @@ class EditPostComp extends React.Component {
               </Link>
 
               <div className="add-a-new-post">- Edit your post -</div>
-              <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
+              <form
+                onSubmit={this.handleFormSubmit}
+                ref={(el) => {
+                  this.form = el;
+                }}
+              >
                 <div className="form-group2">
                   <input
                     type="text"
@@ -122,9 +126,9 @@ class EditPostComp extends React.Component {
                 </div>
                 <div className="form-group2">
                   <input
-                  className="upload-images"
-                  name="photo-input"
-                  id="photo-input"
+                    className="upload-images"
+                    name="photo-input"
+                    id="photo-input"
                     placeholder="Add link to photo here."
                   />
                 </div>
