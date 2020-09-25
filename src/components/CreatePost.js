@@ -29,8 +29,8 @@ class EditPostComp extends React.Component {
     var { currentUser } = this.props;
     var data = {
       name: formData.get("title-input"),
-      description: formData.get("location-input"),
-      location: formData.get("description-input"),
+      description: formData.get("description-input"),
+      location: formData.get("location-input"),
       photo: formData.get("photo-input"),
     };
     ApiHook.addPost(data).then((res) => this.props.history.push("/newsfeed"));

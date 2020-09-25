@@ -24,12 +24,13 @@ class Post extends Component {
               </div>
               {location}
             </div>
-            <div className="description">
-              <div className="location-thumbtack"></div>
-              {description}
-            </div>
+
           </div>
         </div>
+		<div className="description">
+            	  <div className="location-thumbtack"></div>
+             	 {description}
+          	 	 </div>
         <div className="posted-image">
           <img src={photo} />
         </div>
