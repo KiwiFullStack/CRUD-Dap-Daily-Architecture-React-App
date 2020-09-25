@@ -5,16 +5,21 @@ var urlprefix = 'http://localhost:4000/api'
 
 var ApiHook = {
 
-    getProjects : () => {
+    serverUrl : 'http://localhost:4000/',
+
+    getPosts : () => {
         return axios.get(urlprefix+'/posts')
     },
-    getSingleProject : (id) => {
+    getSinglePost : (id) => {
         return axios.get(urlprefix+'/posts/'+id)
     },
-    addProjects : (data) => {
+    addPost : (data) => {
         return axios.post(urlprefix+'/posts',data)
     },
-    updateProjects : (id,data) => {
+    deletePost : (id) => {
+        return axios.delete(urlprefix+'/posts/'+id)
+    },
+    updatePosts : (id,data) => {
         return axios.put(urlprefix+'/posts/'+id,data)
     },
 }
