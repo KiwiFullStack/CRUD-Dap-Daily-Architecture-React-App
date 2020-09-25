@@ -4,24 +4,72 @@ import ApiHook from './Api'
 
 class  Post extends Component {
 
-	// handleTrashClick = () => {
-	// 	var {id,loadPosts} = this.props
-	// 	ApiHook.deletePost(id)
-	// 	loadPosts()
-	// }
+	handleTrashClick = () => {
+		var {id,loadPosts} = this.props
+		ApiHook.deletePost(id)
+		loadPosts()
+	}
   	render(){
 	  	var {id,name,description,location, description,photo} = this.props
 	    return (
-	      <div className="card post">
-	        <img className="card-img-top" src={photo ? ApiHook.serverUrl+photo : '/post.jpg'} alt="Card image cap" />
-	        <div className="card-body">
-	          <h5 className="card-title">{name}</h5>
-	          <p className="card-text">{description}</p>
-	          <p>
-	            {/* <i onClick={this.handleTrashClick} className="fas fa-trash"></i> */}
-	          </p>
-	        </div>
-	      </div>
+			<div className="post-group">
+			<div className="profile-title-location">
+			  <div className="post-profilepic">
+				<img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-56-dsc2965456645345639.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db42e7af25ea1c609baa0f34408a9fce"  />
+			  </div>
+			  <div className="title-of-photo">{name}</div>
+			  <div className="location">
+				<div className="location-thumbtack">
+				  <i className="fas fa-thumbtack" />
+				</div>
+		  {location}
+		  </div>
+			</div>
+			<div className="posted-image">
+			  <img src={photo}  />
+			</div>
+			<div className="edit-like-fav">
+			  <div className="left">
+			  <Link to={'/posts/'+id+'/edit'}><i className="fas fa-edit"></i></Link>
+				<i className="fas fa-heart" />
+				<i className="fas fa-star" />
+			  </div>
+			  <div className="right">
+			  <i onClick={this.handleTrashClick} className="fas fa-trash"></i>
+			  </div>
+			</div>
+			<div className="comment comment1">
+			  <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/277-pom-009777-chim.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=83bc3f756995eab9c6176211c3fbee62"  />
+			  <div className="user-comment1">Wow! Nice view of the building.</div>
+			</div>
+			<div className="comment comment2">
+			  <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/277-pom-009777-chim.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=83bc3f756995eab9c6176211c3fbee62"  />
+			  <div className="user-comment2">What time did you take the photo?</div>
+			</div>
+			<div className="comment comment3">
+			  <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-56-dsc2965456645345639.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db42e7af25ea1c609baa0f34408a9fce"  />
+			  <form action className="comment-form">
+				<input
+				  type="text"
+				  id="comment-input"
+				  placeholder="Add a comment ..."
+				/>
+				<button type="submit" id="comment-post">
+				  Post
+		  </button>
+			  </form>
+			</div>
+			<div className="footer">
+			  <div className="footer-gradient" />
+			  <div className="tab1">
+				<i className="fas fa-building" />
+			  </div>
+			  <Link to="/create" className="tab2"><i className="fas fa-plus" /></Link>
+			  <div className="tab3">
+				<i className="fas fa-star" />
+			  </div>
+			</div>
+		  </div>
 	    )
   	}
 }
@@ -29,64 +77,7 @@ class  Post extends Component {
 export default Post;
 
 
-<div className="post-group">
-  <div className="profile-title-location">
-	<div className="post-profilepic">
-	  <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-56-dsc2965456645345639.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db42e7af25ea1c609baa0f34408a9fce"  />
-	</div>
-	<div className="title-of-photo">{name}</div>
-	<div className="location">
-	  <div className="location-thumbtack">
-		<i className="fas fa-thumbtack" />
-	  </div>
-{location}
-</div>
-  </div>
-  <div className="posted-image">
-	<img src={photo}  />
-  </div>
-  <div className="edit-like-fav">
-	<div className="left">
-	<Link to={'/posts/'+id+'/edit'}><i className="fas fa-edit"></i></Link>
-	  <i className="fas fa-heart" />
-	  <i className="fas fa-star" />
-	</div>
-	<div className="right">
-	  <i className="fas fa-trash" />
-	</div>
-  </div>
-  <div className="comment comment1">
-	<img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/277-pom-009777-chim.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=83bc3f756995eab9c6176211c3fbee62"  />
-	<div className="user-comment1">Wow! Nice view of the building.</div>
-  </div>
-  <div className="comment comment2">
-	<img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/277-pom-009777-chim.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=83bc3f756995eab9c6176211c3fbee62"  />
-	<div className="user-comment2">What time did you take the photo?</div>
-  </div>
-  <div className="comment comment3">
-	<img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-56-dsc2965456645345639.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db42e7af25ea1c609baa0f34408a9fce"  />
-	<form action className="comment-form">
-	  <input
-		type="text"
-		id="comment-input"
-		placeholder="Add a comment ..."
-	  />
-	  <button type="submit" id="comment-post">
-		Post
-</button>
-	</form>
-  </div>
-  <div className="footer">
-	<div className="footer-gradient" />
-	<div className="tab1">
-	  <i className="fas fa-building" />
-	</div>
-	<Link to="/create" className="tab2"><i className="fas fa-plus" /></Link>
-	<div className="tab3">
-	  <i className="fas fa-star" />
-	</div>
-  </div>
-</div>
+
 
 
 
