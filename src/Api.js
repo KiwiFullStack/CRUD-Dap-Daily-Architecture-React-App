@@ -19,9 +19,13 @@ var ApiHook = {
     deletePost : (id) => {
         return axios.delete(urlprefix+'/posts/'+id)
     },
-    updatePosts : (id,data) => {
+    updatePost: (id,data) => {
         return axios.put(urlprefix+'/posts/'+id,data)
     },
+    uploadFile : (formData) => {
+        var settings = { headers: {'Content-Type': 'multipart/form-data' }}
+        return axios.post(urlprefix+'/posts',formData,settings)
+    }
 }
 
 export default ApiHook
