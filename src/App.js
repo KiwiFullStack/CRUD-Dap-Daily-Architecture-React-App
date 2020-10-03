@@ -14,7 +14,6 @@ class App extends React.Component {
     this.state = {
       activeView: "CreatePost",
     };
-    console.log("hi");
   }
 
   render() {

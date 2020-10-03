@@ -38,16 +38,11 @@ class EditPostComp extends React.Component {
   };
 
   render() {
-    var {
-      name,
-      description,
-      location,
-      photo,
-    } = this.state.post;
+    var { name, description, location, photo } = this.state.post;
     return (
       <div className="app">
         <div className="newsfeed-page">
-          <div class="blackbackground"></div>
+          <div className="blackbackground"></div>
           <div className="gradient" />
           <div className="fixedtop">
             <div className="nav-top">
@@ -69,7 +64,7 @@ class EditPostComp extends React.Component {
             <div className="main-profilepic">
               <img
                 src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-56-dsc2965456645345639.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db42e7af25ea1c609baa0f34408a9fce"
-                alt
+                alt="DAP"
               />
               <div className="email-updates">
                 sarah2020@gmail.com
@@ -101,8 +96,7 @@ class EditPostComp extends React.Component {
                     className="title-photo"
                     name="title-input"
                     id="title-input"
-                    placeholder={name}
-                    value={name}
+                    value={this.state.post.name}
                   />
                 </div>
                 <div className="form-group2">
@@ -111,8 +105,7 @@ class EditPostComp extends React.Component {
                     className="location-photo"
                     name="location-input"
                     id="location-input"
-                    placeholder={location}
-                    value={location}
+                    value={this.state.post.location}
                   />
                 </div>
                 <div className="form-group2">
@@ -121,8 +114,7 @@ class EditPostComp extends React.Component {
                     className="post-desc"
                     name="description-input"
                     id="description-input"
-                    placeholder={description}
-                    value={description}
+                    value={this.state.post.description}
                   />
                 </div>
                 <div className="form-group2">
@@ -130,8 +122,7 @@ class EditPostComp extends React.Component {
                     className="upload-images"
                     name="photo-input"
                     id="photo-input"
-                    placeholder={photo}
-                    value={photo}
+                    value={this.state.post.photo}
                   />
                 </div>
 

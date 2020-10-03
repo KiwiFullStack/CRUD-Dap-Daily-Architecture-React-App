@@ -30,10 +30,8 @@ class FeedsComp extends React.Component {
     this.loadPosts();
   }
 
-
   render() {
     return (
-      
       <div className="newsfeed-page">
         <div className="blackbackground"></div>
         <div className="gradient" />
@@ -55,7 +53,10 @@ class FeedsComp extends React.Component {
             </div>
           </div>
           <div className="main-profilepic">
-            <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-56-dsc2965456645345639.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db42e7af25ea1c609baa0f34408a9fce" />
+            <img
+              alt="DAP"
+              src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-56-dsc2965456645345639.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db42e7af25ea1c609baa0f34408a9fce"
+            />
             <div className="email-updates">
               sarah2020@gmail.com
               <div className="profile-edit"></div>
