@@ -30,18 +30,12 @@ class FeedsComp extends React.Component {
     this.loadPosts();
   }
 
-  render() {
-    return (
-      <div class="main">
-        <h3>All Posts</h3>
-      </div>
-    );
-  }
 
   render() {
     return (
+      
       <div className="newsfeed-page">
-        <div class="blackbackground"></div>
+        <div className="blackbackground"></div>
         <div className="gradient" />
         <div className="fixedtop">
           <div className="nav-top">

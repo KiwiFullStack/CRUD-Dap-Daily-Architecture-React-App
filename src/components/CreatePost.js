@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ApiHook from "../Api";
 
 class EditPostComp extends React.Component {
@@ -26,7 +26,6 @@ class EditPostComp extends React.Component {
     // ApiHook.uploadFile(formData)
     //   .then(res => res.data)
     //   .then(fileName => {
-    var { currentUser } = this.props;
     var data = {
       name: formData.get("title-input"),
       description: formData.get("description-input"),
@@ -38,14 +37,6 @@ class EditPostComp extends React.Component {
   };
 
   render() {
-    var {
-      id,
-      name,
-      description,
-      location,
-      description,
-      photo,
-    } = this.state.post;
     return (
       <div className="app">
         <div className="newsfeed-page">
@@ -71,7 +62,7 @@ class EditPostComp extends React.Component {
             <div className="main-profilepic">
               <img
                 src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-56-dsc2965456645345639.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db42e7af25ea1c609baa0f34408a9fce"
-                alt
+              
               />
               <div className="email-updates">
                 sarah2020@gmail.com
@@ -90,7 +81,7 @@ class EditPostComp extends React.Component {
                 <i className="fas fa-window-close" />
               </Link>
 
-              <div className="add-a-new-post">- Edit your post -</div>
+              <div className="add-a-new-post">- Create a new post -</div>
               <form
                 onSubmit={this.handleFormSubmit}
                 ref={(el) => {

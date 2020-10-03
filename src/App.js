@@ -1,7 +1,6 @@
 import React from "react";
-import ApiHook from "./Api";
 import "./App.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import CreatePostComp from "./components/CreatePost";
 import EditPostComp from "./components/EditPost";
 import LoginComp from "./components/Login";

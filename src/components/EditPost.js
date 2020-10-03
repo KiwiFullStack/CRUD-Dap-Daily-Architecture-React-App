@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ApiHook from "../Api";
 
 class EditPostComp extends React.Component {
@@ -39,11 +39,9 @@ class EditPostComp extends React.Component {
 
   render() {
     var {
-      id,
       name,
       description,
       location,
-      description,
       photo,
     } = this.state.post;
     return (
@@ -104,6 +102,7 @@ class EditPostComp extends React.Component {
                     name="title-input"
                     id="title-input"
                     placeholder={name}
+                    value={name}
                   />
                 </div>
                 <div className="form-group2">
@@ -113,6 +112,7 @@ class EditPostComp extends React.Component {
                     name="location-input"
                     id="location-input"
                     placeholder={location}
+                    value={location}
                   />
                 </div>
                 <div className="form-group2">
@@ -122,6 +122,7 @@ class EditPostComp extends React.Component {
                     name="description-input"
                     id="description-input"
                     placeholder={description}
+                    value={description}
                   />
                 </div>
                 <div className="form-group2">
@@ -130,6 +131,7 @@ class EditPostComp extends React.Component {
                     name="photo-input"
                     id="photo-input"
                     placeholder={photo}
+                    value={photo}
                   />
                 </div>
 
