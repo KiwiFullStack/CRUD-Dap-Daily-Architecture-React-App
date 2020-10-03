@@ -14,7 +14,7 @@ class EditPostComp extends React.Component {
   }
 
   componentDidMount() {
-    var id  = this.props.match.params.id;
+    var id = this.props.match.params.id;
     ApiHook.getSinglePost(id).then((res) => {
       this.setState({ post: res.data });
     });
@@ -22,7 +22,7 @@ class EditPostComp extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-   var formData = new FormData(this.form);
+    var formData = new FormData(this.form);
 
     var data = {
       name: formData.get("title-input"),
@@ -30,13 +30,22 @@ class EditPostComp extends React.Component {
       location: formData.get("description-input"),
       photo: formData.get("photo-input"),
     };
-    console.log(data)
-    var  id  = this.props.match.params.id;
-    ApiHook.updatePost(id, data).then((res) => this.props.history.push('/newsfeed'));
+    console.log(data);
+    var id = this.props.match.params.id;
+    ApiHook.updatePost(id, data).then((res) =>
+      this.props.history.push("/newsfeed")
+    );
   };
 
   render() {
-    var { id, name, description, location, description, photo } = this.state.post;
+    var {
+      id,
+      name,
+      description,
+      location,
+      description,
+      photo,
+    } = this.state.post;
     return (
       <div className="app">
         <div className="newsfeed-page">
@@ -82,7 +91,12 @@ class EditPostComp extends React.Component {
               </Link>
 
               <div className="add-a-new-post">- Edit your post -</div>
-              <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
+              <form
+                onSubmit={this.handleFormSubmit}
+                ref={(el) => {
+                  this.form = el;
+                }}
+              >
                 <div className="form-group2">
                   <input
                     type="text"
@@ -112,9 +126,9 @@ class EditPostComp extends React.Component {
                 </div>
                 <div className="form-group2">
                   <input
-                  className="upload-images"
-                  name="photo-input"
-                  id="photo-input"
+                    className="upload-images"
+                    name="photo-input"
+                    id="photo-input"
                     placeholder={photo}
                   />
                 </div>

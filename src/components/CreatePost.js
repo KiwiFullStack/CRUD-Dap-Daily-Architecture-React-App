@@ -132,7 +132,6 @@ class EditPostComp extends React.Component {
                     placeholder="Add link to photo here."
                   />
                 </div>
-
                 <div className="buttons-addpostdone">
                   <button type="submit" className="btn btn-newpostdone">
                     Done

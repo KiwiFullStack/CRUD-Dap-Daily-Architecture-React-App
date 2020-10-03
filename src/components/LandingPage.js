@@ -1,6 +1,5 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-
 
 class LandingComp extends React.Component {
   render() {
@@ -13,10 +12,12 @@ class LandingComp extends React.Component {
             <h1>D A P</h1>
             <p>-Let your imagination go wild-</p>
           </div>
-          <Link to="/login" className="taptobegin">Tap here to begin</Link>
+          <Link to="/login" className="taptobegin">
+            Tap here to begin
+          </Link>
         </div>
       </div>
-    )
+    );
   }
 }
 
