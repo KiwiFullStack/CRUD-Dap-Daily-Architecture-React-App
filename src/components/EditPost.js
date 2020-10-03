@@ -38,7 +38,6 @@ class EditPostComp extends React.Component {
   };
 
   render() {
-    var { name, description, location, photo } = this.state.post;
     return (
       <div className="app">
         <div className="newsfeed-page">
